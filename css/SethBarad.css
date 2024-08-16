@@ -1,0 +1,585 @@
+@charset "utf-8";
+
+
+
+html,body,p,div,img,h1,h2,h3,h4,li,ul,ol,dl,dd,dt,form,table,td,tr{
+	margin:0px;
+	padding:0px;
+	border:0px;
+	border-collapse:separate;
+	border-spacing:0px;
+	font-size: 12pt;
+	text-align: right;
+}
+body,td,th {
+	color: #333;
+}
+body,td,th {
+	color: #333;
+}
+
+input,select{ margin:0; padding:0; }
+body {
+	color: #333;
+	background-color: #655e5e;
+	margin-top: 2.25em;
+	margin-right: 0;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0;
+	padding-right: 2em;
+	padding-bottom: 40px;
+	padding-left: 2em;
+	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+	font-size: 10pt;
+	line-height: 1;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+	list-style-position: inside;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+	text-decoration: none;
+	font-size: 12pt;
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+	padding-right: 0px;
+	padding-left: 0px;
+	max-width: 100%;
+}
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #000;
+	text-decoration: none; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #000;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+	text-align: left;
+}
+
+.awords {
+	padding-bottom: 10px;
+}
+.awords2 {
+	padding-bottom: 10px;
+	border-bottom-width: thin;
+	border-top-style: none;
+	border-bottom-style: solid;
+	border-bottom-color: #CCC;
+}
+
+/* ~~ this fixed width container surrounds all other elements ~~ */
+.container {
+	width: 1000px;
+	background: #FFF; /* the auto value on the sides, coupled with the width, centers the layout */
+	height: 1100px;
+	margin-bottom: 0px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+.container_about {
+	width: 1000px;
+	background: #FFF; /* the auto value on the sides, coupled with the width, centers the layout */
+	height: 1200px;
+	margin-bottom: 0px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+.container_articles {
+	width: 1000px;
+	background: #FFF; /* the auto value on the sides, coupled with the width, centers the layout */
+	height: 2450px;
+	margin-bottom: 0px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+.container_contact {
+	width: 1000px;
+	background: #FFF; /* the auto value on the sides, coupled with the width, centers the layout */
+	height: 1000px;
+	margin-bottom: 0px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+#ComingSoon {
+	font-size: 2em;
+	font-family: Verdana, Geneva, sans-serif;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	font-size: 1.5em;
+	color: #00C;
+	top: 144px;
+	font-style: italic;
+}
+
+
+/* ~~ This is the layout information. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the div. The elements within this div have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+*/
+.content {
+	padding: 10px 0 0;
+	height: 1700px;
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: none;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the overflow:hidden on the .container is removed */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.home .sticky {
+	background: #f2f7fc;
+	border-top: 4px solid #000;
+	margin-left: -20px;
+	margin-right: -20px;
+	padding: 18px 20px;
+}
+.blog .sticky .entry-header .entry-meta {
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+#page {
+	clear: both !important;
+	display: block !important;
+	float: none !important;
+	max-width: 100%;
+	position: relative !important;
+}
+#branding hgroup {
+	margin: 0 7.6% 0 0;
+}
+#site-title {
+	margin-right: 100px;
+	text-decoration: none;
+	font-size: 2.25em;
+	position: absolute;
+	left: 81px;
+	top: 52px;
+	padding: 0em;
+}
+
+.footer {
+	background: #CCC49F;/* this gives IE6 hasLayout to properly clear */
+	clear: both;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	background-color: #655e5e;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #fff;
+	text-align: center;
+	margin-top: 2px;
+}
+#banner {
+	height: 140px;
+}
+#access
+{
+	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+	border-top-style: none;
+	border-top-width: 0px;
+	background-color: #000;
+	margin: 0px;
+	padding: 0px;
+}
+
+#GGB {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	border-top-width: 0px;
+	outline: none;
+	border-bottom-width: 0px;
+	display: block;
+}
+
+.assistive-text {
+	background-color: #000;
+	margin-top: 0px;
+	padding-top: 0px;
+
+}
+.menu2 {
+	display: inline;
+	background-color: #000;
+	height: 40px;
+	margin-top: 0px;
+	padding-top: 0px;
+}
+ul.menu {
+	list-style-type:none;
+	width:auto;
+	position:relative;
+	display:block;
+	height:45px;
+	font-size:0.6em;
+	font-family:Verdana, Helvetica, Arial, sans-serif;
+	margin:0;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 35px;
+	background-color: #000;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #000;
+	border-right-color: #000;
+	border-bottom-color: #000;
+	border-left-color: #000;
+}
+
+ul.menu li {
+	display:block;
+	float:left;
+	margin:0;
+	padding:0;
+	color: #FFF;
+	vertical-align: bottom;
+	background-repeat: repeat-x;
+	text-align: center;
+	list-style-type: none;
+}
+
+ul.menu li a {
+	float:left;
+	color:#FFF;
+	text-decoration:none;
+	vertical-align: bottom;
+	padding-top: 0px;
+	padding-right: 15px;
+	padding-bottom: 0;
+	padding-left: 15px;
+	text-align: center;
+}
+
+ul.menu li a:hover,.current {
+	color:#000;
+	background-color: #FFF;
+	background-image: url(../images/NavBtn_hover.png);
+	background-repeat: repeat;
+	background-position: left top;
+	height: 45px;
+}
+
+ul.menu .current a {
+	color:#fff;
+	font-weight:normal;
+}
+
+.nav_menu {
+	color: #fff;
+	list-style-type: none;
+	font-size: 14px;
+	text-align: center;
+	height: 45px;
+	vertical-align: middle;
+}
+#Banner {
+	background-color: #FFF;
+	height: 140px;
+}
+#tagline {
+	position:absolute;
+	height:25px;
+	z-index:1;
+	left: 81px;
+	top: 96px;
+	font-size: 16px;
+	color: #666;
+	padding: 0px;
+}
+
+#vNAV {
+	position:absolute;
+	width:241px;
+	height:959px;
+	left: 42px;
+	top: 454px;
+	/*background-color: #F9F9F9;*/
+}
+
+
+
+.navBtn {
+	list-style-type: none;
+	height: auto;
+	background-color: #EBEBEB;
+	font-size: 20px;
+	color: #CCC;
+	line-height: normal;
+	text-align: right;
+	padding-right: 15px;
+}
+.navSpace {
+	height: 30px;
+	list-style-type: none;
+}
+#vNAV .vMenu .navBtn a {
+	color: #949494;
+	display: block;
+	width: 226px;
+}
+#vNAV .vMenu .navBtn a:hover {
+	color: #000;
+	/*background-color: #DEDEDE;*/
+}
+#wandm {
+	position: absolute;
+	width: 674px;
+	height: 1550px;
+	z-index: 1;
+	left: 298px;
+	top: 441px;
+	font-size: 12px;
+	text-align: justify;
+}
+#wandmf {
+	position:absolute;
+	height:938px;
+	z-index:1;
+	left: 26px;
+	top: 470px;
+	width: 925px;
+}
+
+#wandm p {
+	line-height: 1.2em;
+	padding-bottom: 10px;
+	font-size: 14px;
+	text-align: left;
+	color: #000;
+}
+
+#wandm p.home {
+	line-height: 1.2em;
+	padding-bottom: 10px;
+	font-size: 15px;
+	text-align: left;
+	color: #333;
+}
+#wandmf p {
+	line-height: 1.2em;
+	padding-bottom: 10px;
+}
+
+.undline {
+	font-weight: bold;
+	padding-bottom: 4px;
+	padding-top: 6px;
+}
+#wandm ul {
+	font-size: 12px;
+	line-height: 1.2em;
+	list-style-position: inside;
+	list-style-type: square;
+	margin-left: 60px;
+	padding-bottom: 4px;
+	padding-top: 2px;
+	display: block;
+}
+#wandmf ul {
+	font-size: 12px;
+	line-height: 1.2em;
+	list-style-position: inside;
+	list-style-type: square;
+	margin-left: 60px;
+	padding-bottom: 4px;
+	padding-top: 2px;
+}
+
+#wandm ul li {
+	padding-bottom: 6px;
+	text-align: left;
+	display: list-item;
+	list-style-type: square;
+	list-style-position: outside;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#wandmf ul li {
+	padding-bottom: 6px;
+}
+#svnav {
+
+}
+#sab_pic {
+	position: relative;
+	float: right;
+	padding-top: 32px;
+	padding-right: 10px;
+	padding-left: 5px;
+}
+
+
+img.hiddenpic{
+	display:none;
+}
+div#preload { display: none; }
+
+
+#cform {
+	position:absolute;
+	left:400px;
+	top:500px;
+	height:160px;
+	z-index:1;
+	width: 350px;
+}
+#center {
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+}
+.tcenter {
+	text-align: center;
+	height: 25px;
+	font-size: 14pt;
+	color: #666;
+}
+.f_data {
+	padding-left: 8px;
+	text-align: left;
+}
+
+
+#tleft {
+	text-align: left;
+	padding-bottom: 10px;
+	font-size: 18px;
+	color: #666666;
+}
+#tright {
+	text-align: right;
+	padding-bottom: 10px;
+	font-size: 18px;
+	color: #666666;
+}
+#cform #center tr #tleft img {
+	background-image: url(../images/SAB2016.png);
+	background-repeat: no-repeat;
+	width: 145;
+}
+#cform #center tr #tleft img:hover {
+	background-image: url(../images/SAB2016.png);
+	background-repeat: no-repeat;
+	width: 145;
+}
+#tcenter_hv {
+	line-height: 1em;
+	text-align: center;
+	vertical-align:top;
+}
+#tcenter_hv2 {
+	line-height: 1em;
+	text-align: center;
+	vertical-align:middle;
+}
+#eform {
+	position:absolute;
+	width:644px;
+	height:496px;
+	z-index:1;
+	left: 225px;
+	top: 740px;
+}
+.home.blog.single-author .container #branding #banner #site-title span a {
+	color: #000;
+}
+p .uline {
+	text-decoration: underline;
+}
+.imgcenter {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+.article_sec {
+	padding-right: 40px;
+	padding-left: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: left;
+	margin: 10px 40px;
+}
+.shade {
+	background-color: #ebebeb;
+}
+.light {
+	background-color: #FAFAFA;
+}
+
+.aleft {
+	color: #00F;
+	text-align: left;
+	padding-left: 15px;
+}
+#svnav .vMenu .navBtn a {
+	text-align: right;
+}
+#wandm h1 {
+	text-align: left;
+	font-size: 24px;
+	padding-bottom: 5px;
+}
+
+
+
+
+a.aleft, a.aleft:hover, a.aleft:active, a.aleft:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: underline;
+	text-align: left;
+	font-style: italic;
+	color: #00C;
+	font-size: 10pt;
+	display: block;
+}
+.pad {
+	padding-left: 40px;
+}
+.home {
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.strong {
+	font-weight: bold;
+	padding-top: 16px;
+}

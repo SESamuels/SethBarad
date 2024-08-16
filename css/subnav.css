@@ -1,0 +1,37 @@
+#subnav ul li,
+#subnav_reveal ul li {
+	padding: 5px 4px 5px 5px;
+	line-height: 10px;
+	color: #999;
+	list-style-type: none;
+	text-align: right;
+}
+
+#subnav ul li:hover,
+#subnav_reveal ul li:hover {
+	color: #999;
+	font-weight: bold;
+}
+
+#subnav ul li.nav_highlight,
+#subnav_reveal ul li.nav_highlight {
+	color: #fff;
+	background-color: #280001;	
+}
+#subnav ul li a,
+#subnav_reveal ul li {
+	padding: 5px 4px 5px 5px;
+	line-height: 10px;
+	color: #000;
+	list-style-type: none;
+	text-align: right;
+}
+.home.blog.single-author .container .content #wandm .tcenter {
+	font-size: 16px;
+	text-align: center;
+}
+#wandm .article_sec .awords.shade .atitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+}
