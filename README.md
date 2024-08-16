@@ -1,2 +1,2 @@
 # sethbarad.com2024
- sethbarad websiet
+ sethbarad website to Netlify
